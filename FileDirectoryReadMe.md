@@ -67,7 +67,7 @@ DELETE directoryDoesNotExist
 ```
 Sample Output :
 ```
-Cannot DELETE directoryDoesNotExist - directoryDoesNotExist does not exist
+Cannot delete directoryDoesNotExist - directoryDoesNotExist does not exist
 ``` 
 ### LIST: Displays the full structure of the directory
 
