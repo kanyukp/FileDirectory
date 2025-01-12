@@ -22,7 +22,7 @@ node fileDirectory.js
 
 ## Command List
 
-* CREATE: Creates a new directory
+### CREATE: Creates a new directory
 
 Sample Input : 
 ```
@@ -32,7 +32,7 @@ Sample Output :
 ```
 CREATE fruits
 ```
-* MOVE: Moves a directory and all of its child directories to another location
+### MOVE: Moves a directory and all of its child directories to another location
 
 Sample Standard Input : 
 ```
@@ -51,7 +51,8 @@ Sample Output :
 Cannot move directoryDoesNotExist - directoryDoesNotExist does not exist
 ``` 
 
-* DELETE: Deletes a directory and all of its child directories
+### DELETE: Deletes a directory and all of its child directories
+
 Sample Standard Input : 
 ```
 DELETE grains/squash
@@ -68,9 +69,11 @@ Sample Output :
 ```
 Cannot DELETE directoryDoesNotExist - directoryDoesNotExist does not exist
 ``` 
-* LIST: Displays the full structure of the directory
-* EXIT: Terminates the application
-* HELP: Displays command list
+### LIST: Displays the full structure of the directory
+
+### EXIT: Terminates the application
+
+### HELP: Displays command list
 
 
 ## Version History
