@@ -56,6 +56,20 @@ class FileDirectory {
     const destParts = destination.split('/');
 
     let current = this.root
+    for (let j = 0; j < destParts.length - 1; j++) {
+      if (!current[destParts[j]]) {
+        console.log(`Cannot move to ${destination} - ${destParts[j]} does not exist`);
+        return;
+      }
+      current = current[destParts[j]];
+    }
+    const targetDirectory = destParts[destParts.length - 1];
+    if (!current[targetDirectory]) {
+      console.log(`Cannot move ${destination} - ${destParts[0]} does not exist`);
+      return;
+    }
+
+    current = this.root
     for (let i = 0; i < sourceParts.length - 1; i++) {
       if (!current[sourceParts[i]]) {
         console.log(`Cannot move ${source} - ${sourceParts[i]} does not exist`);
@@ -65,6 +79,11 @@ class FileDirectory {
     }
 
     const directoryToMove = sourceParts[sourceParts.length - 1];
+    if (!current[directoryToMove]) {
+      console.log(`Cannot move ${source} - ${sourceParts[0]} does not exist`);
+      return;
+    }
+
     const copiedDirectory = current[directoryToMove];
     delete current[directoryToMove];
     let destCurrent = this.root;
@@ -145,7 +164,7 @@ class FileDirectory {
   // Function that prints help message
   printHelp() {
     console.log("This is the list of valid manual commands: ");
-    for (const command of COMMANDS_LIST){
+    for (const command of VALID_COMMANDS){
       console.log(command);
     }
     console.log("Consult the README for additional information");
